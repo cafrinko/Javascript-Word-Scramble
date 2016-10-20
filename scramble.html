@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Scramble</title>
+    <link rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+    <h1>A Javascript Word Scramble Game</h1>
+
+    <script>
+        var WORDS = ["booger", "apple", "hackbright", "mango"];
+        var SCRAMBLED = ["oogreb", "papel", "backrhight", "goman"];
+
+
+
+        var playing = true;
+
+        while (playing) {
+
+
+
+            // Grab a random word from the WORDS array
+
+            var indexRandomWord = Math.floor(Math.random() * WORDS.length);
+
+            // will pull index of selected random word
+
+            // Grab the corresponding scrambled word from the SCRAMBLED array
+
+            var randomWord = WORDS[indexRandomWord];
+
+            var scrambledWord = SCRAMBLED[indexRandomWord];
+
+            // prompt the user to guess the original word when given the scrambled word
+
+            var alertScrambled = alert("Here is the scrambled word: " + scrambledWord + ".");
+
+            var guessedWord = prompt("Here is a scrambled word: " + scrambledWord + " Guess the original word: ");
+
+            var lowerCaseGuessedWord = guessedWord.toLowerCase();
+
+            // If the user guesses wrong, tell them they were wrong and the right word.
+
+            if (lowerCaseGuessedWord === randomWord) {
+
+                alert("Congratulations! You guessed the right word, " + randomWord + ".");
+            }
+
+            else {
+                alert("You guessed the wrong word, correct word was " + randomWord + ".");
+            }
+            // If the user guesses the correct word, congratulate them.
+
+            playing = confirm("Press OK To keep playing or Cancel to quit.");
+
+            // What does confirm() return?
+            // What does setting the playing variable do?
+        }
+
+        alert("goodbye!");
+    </script>
+    
+</body>
+</html>
